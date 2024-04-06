@@ -1,3 +1,5 @@
+@import url('./includes/modal.css');
+
 .infos-user
 {
     height: 80%;
@@ -27,7 +29,9 @@
 {
     width: 5em;
     height: 5em;
+    object-fit:scale-down;
     border-radius: 50%;
+    border: 0.5px solid #ccc;
 }
 .infos-user > .info
 {
@@ -62,7 +66,7 @@
 .options > button
 {
     padding: 10px;
-    width: 150px;
+    width: 50%;
    
     font-weight: bold;
     background-color: rgb(68, 185, 68);
@@ -75,4 +79,50 @@
     cursor: pointer;
     background-color: rgb(41, 108, 41);
     color: white;
+}
+
+
+@media (width < 935px)
+{   
+
+    .options
+    {
+        padding: 5px;
+    }
+    .options > button
+    {
+        width: 100%;
+    }
+
+    @media (width < 680px)
+    {
+        .options > button
+        {
+            font-size: 10px;
+        }
+
+        .infos-user > .info h4
+        {
+            font-size: 16px;
+        }
+    
+        .infos-user > .info 
+        {
+            font-size: 12px;
+        }
+    }
+}
+
+
+
+
+@media (width < 500px)
+{
+    .infos-user
+    {
+        grid-template-areas: 
+        "photo photo photo photo"
+        "info info info info"
+        "option option option option";
+    }
 }

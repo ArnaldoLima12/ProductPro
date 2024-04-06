@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="../css/panel.css">
+  <link rel="stylesheet" href="../css/infosUser.css">
   <link rel="shortcut icon" href="../imgs/box.png" type="image/x-icon">
   <title>Perfil</title>
 </head>
@@ -36,7 +37,7 @@
             <div class="options">
               <button>Alterar senha</button>
               <button>Alterar nome</button>
-              <button>Alterar imagem</button>
+              <button id="photo">Alterar imagem</button>
               <%if(user[0].admin) {%>
               <button>Ver perfils</button>
               <%}%>
@@ -51,11 +52,28 @@
           </div>
         </article>
       </main>
+
+      <dialog class="modal">
+        <div class="headerModal">
+          <p>Alterar imagem</p>
+        </div>
+        <div class="mainModal">
+          <form method="POST" action='/home/perfil/savePhoto'>
+            <input type="file" name="file" id="file">
+            <input type="submit" value="Enviar">
+          </form>
+        </div>
+        <div class="footerModal">
+          <button class="closeButton">Fechar</button>
+        </div>
+      </dialog>
     </div>
   </div>
+
+
 </body>
 
-<script src="../js/painel.js"></script>
+<script src="../js/modals.js"></script>
 <script src="../js/theme.js"></script>
 
 </html>

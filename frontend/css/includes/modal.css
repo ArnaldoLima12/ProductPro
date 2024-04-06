@@ -1,0 +1,67 @@
+.modal
+{
+    width: 50%;
+    min-width: 200px;
+    height: 250px;
+    border-radius: 10px;
+    margin: auto;
+    border-radius: 1px solid black;
+    box-shadow: 1px 1px 10px black;
+    padding: 5px;
+    transition: all 0.3s linear;
+}
+
+.modal > .headerModal
+{   
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+}
+
+.modal > .mainModal
+{
+    height: 135px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.mainModal> form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.mainModal> form > input[type='submit']
+{
+    padding: 10px;
+    background-color: rgb(68, 196, 68);
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.modal > .footerModal
+{   
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.modal > .footerModal > .closeButton
+{
+    padding: 10px;
+    font-size: 12px;
+    background-color: rgb(194, 53, 53);
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.modal > .footerModal > .closeButton:hover
+{
+    background-color: rgb(133, 36, 36);
+    cursor: pointer;
+}

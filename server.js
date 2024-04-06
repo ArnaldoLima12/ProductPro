@@ -1,6 +1,6 @@
 const express = require('express');
 const session = require('express-session');
-const Conection = require('./backend/db/conectionDB.js');
+require('./backend/db/conectionDB.js');
 
 const path = require('path');
 const app = express();
@@ -19,9 +19,6 @@ app.use(session({
     cookie:  {maxAge: 15 * 60 * 1000}
 }));
 
-
-
-Conection.conection().catch(err => console.log('Erro mongo'));
 
 const routerLogin = require('./backend/routers/routerLogin.js'); //Raiz das ROTAS //Substituindo as rotas pelas rotas definidas no arquivo de rotas
 const routerPanel = require('./backend/routers/routerPanel.js');

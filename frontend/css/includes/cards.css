@@ -66,3 +66,25 @@
 .color-card-01{box-shadow: 0 0 0 5px #9dcce8}
 .color-card-02{box-shadow: 0 0 0 5px #96e3a0}
 .color-card-03{box-shadow: 0 0 0 5px #e8e89a}
+
+
+@media (width < 800px)
+{   
+
+    .card__title
+    {
+      font-size: 18px;
+    }
+    .card__description
+    {
+      font-size: 16px;
+    }
+
+    @media (width < 695px)
+    {
+      .card
+      {
+        width: 100%;
+      }
+    }
+}
