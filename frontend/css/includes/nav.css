@@ -1,0 +1,156 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.Navegation
+{   
+    position: absolute;
+    height: 100%;
+    left: 0;
+    background-color: rgb(56, 184, 141);
+    width: 70px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    z-index: 2;
+}
+
+.Navegation:hover
+{
+    width: 280px;
+    transition: all 0.5s ease;
+}
+
+.Navegation a
+{
+    width: 300px; 
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.Navegation a:hover
+{   
+    transition: all 0.3s ease;
+    color: rgb(41, 41, 41);
+}
+.Navegation a > i
+{   
+    font-size: 28px;
+    text-align: center;
+    
+    margin-left: 10px;
+}
+
+.logo
+{   
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo > img
+{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.logo > span{
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+.nav-item
+{   
+   margin-left: 15px;
+}
+
+.logout 
+{
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* 
+.logo
+{
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 6px;
+    
+}
+
+.logo img
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.logo span
+{
+    font-weight: bold;
+    padding-left: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a
+{
+    position: relative;
+    color: #ffffff;
+    font-size: 18px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+
+.fas
+{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    text-align: center;
+    margin-left: 15px;
+    font-size: 24px;
+}
+
+.nav-item
+{
+    position: relative;
+    top: 12px;
+    margin-left: 25px;
+}
+
+a:hover
+{
+    color: #242424;
+}
+
+nav:hover{
+    width: 280px;
+    transition: all 0.5s ease;
+}
+
+.logout
+{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+} */

@@ -1,0 +1,78 @@
+.infos-user
+{
+    height: 80%;
+    width: 100%;
+    display: grid;
+    grid-template-columns:repeat(2, 1fr) repeat(2, 2fr); /* Ajuste aqui */ /* Alteração feita aqui */
+    grid-template-rows: 100px repeat(2, 1fr);
+    grid-template-areas: 
+    "photo photo photo photo"
+    "option option info info"
+    "option option info info";
+    border: 1px solid var(--dark);
+    border-radius: 10px;
+}
+
+.infos-user > .photo-user
+{    
+    grid-area: photo;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.photo-user > img
+{
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+}
+.infos-user > .info
+{
+    grid-area: info;
+    padding: 10px;
+    font-size: 18px;
+   
+}
+.infos-user > .info > h4
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.infos-user > .info > p > span
+{
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+.infos-user > .options
+{
+    grid-area: option;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    border-right: 1px solid #ccc;;
+}
+
+.options > button
+{
+    padding: 10px;
+    width: 150px;
+   
+    font-weight: bold;
+    background-color: rgb(68, 185, 68);
+    border-radius: 5px;
+    transition: all 0.3s linear;
+}
+
+.options > button:hover
+{
+    cursor: pointer;
+    background-color: rgb(41, 108, 41);
+    color: white;
+}

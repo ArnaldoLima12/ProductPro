@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/panel.css">
+  <link rel="shortcut icon" href="../imgs/box.png" type="image/x-icon">
+  <title>Panel</title>
+</head>
+
+<body>
+  <div class="conteiner">
+    <nav class="navegation">
+      <%-include('includes/nav')%>
+    </nav>
+
+    <div class="panel">
+      <header class="top">
+        <div class="infos">
+          <h1>Olá <%=user[0].name%></h1>
+          <p class="time"></p>
+        </div>
+        <i class="bi bi-moon-fill theme"></i>
+      </header>
+
+      <main class="main">
+        <article>
+          <%- include('includes/cards') %>
+        </article>
+      </main>
+    </div>
+  </div>
+</body>
+
+<script src="js/painel.js"></script>
+<script src="js/theme.js"></script>
+
+</html>
