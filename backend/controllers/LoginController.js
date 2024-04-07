@@ -28,4 +28,5 @@ function setSession(req, loggedIn, user)
 {
      req.session.loggedin = loggedIn;
      req.session.user = user;
+     console.log(req.session.user);
 }
