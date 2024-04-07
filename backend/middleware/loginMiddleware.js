@@ -5,7 +5,8 @@ AuthLogin =  (req, res, next) =>
         return next();
     } 
     else 
-    {
+    {   
+        console.log('Sessão não existe');
         res.redirect('/');
     }
 }

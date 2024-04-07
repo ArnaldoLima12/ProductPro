@@ -1,7 +1,6 @@
 exports.home = (req, res) =>
 {   
     res.render('home', {user: req.session.user});
-    console.log(req.session.user);
 };
 
 exports.perfil = (req, res) =>
