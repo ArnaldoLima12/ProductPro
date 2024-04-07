@@ -5,12 +5,8 @@ exports.home = (req, res) =>
 
 exports.perfil = (req, res) =>
 {   
+    console.log(req.session.user);
     res.render('perfil', {user: req.session.user})
-}
-
-exports.photoSave = (req, res) =>
-{
-    
 }
 
 exports.logout = (req, res) =>

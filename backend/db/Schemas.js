@@ -4,6 +4,7 @@ const userSchema = new moongose.Schema({
     name: String,
     email: String,
     password: String,
+    photo: String,
     admin: Boolean
 });
 

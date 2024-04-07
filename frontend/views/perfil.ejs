@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="../css/panel.css">
-  <link rel="stylesheet" href="../css/infosUser.css">
-  <link rel="shortcut icon" href="../imgs/box.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/panel.css">
+  <link rel="stylesheet" href="/css/infosUser.css">
+  <link rel="shortcut icon" href="/imgs/box.png" type="image/x-icon">
   <title>Perfil</title>
 </head>
 
@@ -30,24 +30,24 @@
           <div class="infos-user">
 
             <div class="photo-user">
-              <img src="../imgs/pessoa.jpg" alt="user">
-              <h3><%=user[0].name%></h3>
+              <img src="/uploads/<%=user.photo%>" alt="user">
+              <h3><%=user.name%></h3>
             </div>
 
             <div class="options">
               <button>Alterar senha</button>
               <button>Alterar nome</button>
               <button id="photo">Alterar imagem</button>
-              <%if(user[0].admin) {%>
+              <%if(user.admin) {%>
               <button>Ver perfils</button>
               <%}%>
             </div>
 
             <div class="info">
               <h4>Informação do usuário</h4>
-              <p><span>Id:</span> <%=user[0]._id%></p>
-              <p><span>E-mail:</span> <%=user[0].email%></p>
-              <p><span>Administrador:</span> <%= user[0].admin ? 'Sim' : 'Não' %></p>
+              <p><span>Id:</span> <%=user._id%></p>
+              <p><span>E-mail:</span> <%=user.email%></p>
+              <p><span>Administrador:</span> <%= user.admin ? 'Sim' : 'Não' %></p>
             </div>
           </div>
         </article>
@@ -58,8 +58,8 @@
           <p>Alterar imagem</p>
         </div>
         <div class="mainModal">
-          <form method="POST" action='/home/perfil/savePhoto'>
-            <input type="file" name="file" id="file">
+          <form method="POST" action="perfil/updatePhoto" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" accept="image/*">
             <input type="submit" value="Enviar">
           </form>
         </div>
@@ -69,11 +69,9 @@
       </dialog>
     </div>
   </div>
-
-
 </body>
 
-<script src="../js/modals.js"></script>
-<script src="../js/theme.js"></script>
+<script src="/js/modals.js"></script>
+<script src="/js/theme.js"></script>
 
 </html>

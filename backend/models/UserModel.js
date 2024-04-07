@@ -18,7 +18,7 @@ class User
 
        if(userAuth.length > 0)
        {    
-            this.#user = userAuth;
+            this.#user = userAuth[0];
             return true;
        }
        else
@@ -28,6 +28,22 @@ class User
        }
 
        
+    }
+
+
+    async updatePhoto(file)
+    {   
+        try
+        {   
+           let userUpdate = await users.findOneAndUpdate({_id: this.#user._id}, {$set: {photo: file.filename}}, {new : true});
+           return userUpdate;
+        }
+        catch(err)
+        {   
+            this.erros.pop();
+            this.erros.push('Erro ao atualizar imagem');
+            return false;
+        }
     }
 
     get User()

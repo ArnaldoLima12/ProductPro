@@ -29,7 +29,7 @@
 {
     width: 5em;
     height: 5em;
-    object-fit:scale-down;
+    object-fit:cover;
     border-radius: 50%;
     border: 0.5px solid #ccc;
 }
