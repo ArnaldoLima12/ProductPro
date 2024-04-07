@@ -15,8 +15,8 @@ app.set('view engine', 'ejs'); // Renderizador das views
 app.use(session({
     name: 'ProductPro',
     secret: 'dajsfafyfa9jf9sasasyfa9hf9ashfa',
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
     cookie:  {maxAge: 15 * 60 * 1000, secure: false}
 }));
 
