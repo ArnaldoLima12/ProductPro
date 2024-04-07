@@ -5,7 +5,7 @@ AuthLogin =  (req, res, next) =>
         return next();
     } 
     else 
-    {   console.log(req.session.user);
+    {   console.log(req.session.loggedin);
         res.redirect('/');
     }
 }
