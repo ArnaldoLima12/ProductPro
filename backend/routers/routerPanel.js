@@ -12,6 +12,7 @@ router.get('/logout', auth, PanelController.logout);
 
 
 //Rotas do painel (perfil)
+router.post('/perfil/updatePassword', PerfilController.updatePassword);
 router.post('/perfil/updatePhoto', auth, upload.single("file"), PerfilController.photoUpdate)
 
 module.exports = router;

@@ -84,25 +84,46 @@
 .error
 {   
     background-color:  rgb(255, 87, 87);
-    animation: error 3s ease-in-out;
+    animation: error 5s linear;
     color: white;
     padding: 10px;
     border-radius: 5px;
     font-size: 16px;
     position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
 @keyframes error
 {
     0% {
        
-        transform: scale(0.7);
-        background-color:  rgba(255, 87, 87, 0.143);
+        transform: scale(0.5);
+        background-color:  rgba(255, 87, 87, 0);
     }
 
-    25%
-    { 
-        background-color:  rgba(255, 87, 87, 0.458);
+    10%
+    {
+        transform: scale(0.6);
+        background-color: rgba(255, 87, 87, 0.200);
+    }
+
+    20%
+    {
+        transform: scale(0.7);
+        background-color: rgba(255, 87, 87, 0.400);
+    }
+
+    30%
+    {
+        transform: scale(0.8);
+        background-color: rgba(255, 87, 87, 0.600);
+    }
+
+    40%
+    {
+        transform: scale(0.9);
+        background-color: rgba(255, 87, 87, 0.800);
     }
 
     50%
@@ -111,15 +132,34 @@
         background-color:  rgb(255, 87, 87);
     }
 
-    75%
+    60%
     {
-        background-color:  rgba(255, 87, 87, 0.458);
+        transform: scale(0.9);
+        background-color: rgba(255, 87, 87, 0.800);
+    }
+
+    70%
+    {
+        transform: scale(0.8);
+        background-color: rgba(255, 87, 87, 0.600);
+    }
+
+    80%
+    {
+        transform: scale(0.7);
+        background-color: rgba(255, 87, 87, 0.400);
+    }
+
+    90%
+    {
+        transform: scale(0.6);
+        background-color: rgba(255, 87, 87, 0.200);
     }
 
     100%
-    {   
-        transform: scale(0.7);
-        background-color:  rgba(255, 87, 87, 0.143);
+    {
+        transform: scale(0.5);
+        background-color:  rgba(255, 87, 87, 0);
     }
 }
 

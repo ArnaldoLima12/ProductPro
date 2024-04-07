@@ -9,5 +9,6 @@ let conection = async () =>
     await mongoose.connect("mongodb+srv://arnaldolima588:LeH0OrjJEKGTrcgA@productpro.ziduzyn.mongodb.net/?retryWrites=true&w=majority&appName=productpro", options);
     console.log('Conectado com sucesso');
 }
+
 conection();
 
