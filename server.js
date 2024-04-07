@@ -13,7 +13,8 @@ app.set('views', path.join(__dirname, 'frontend', 'views')); // Raiz das views
 app.set('view engine', 'ejs'); // Renderizador das views
 
 app.use(session({
-    secret: 'dajsfafyfa9jf9asyfa9hf9ashfa',
+    name: 'ProductPro',
+    secret: 'dajsfafyfa9jf9sasasyfa9hf9ashfa',
     resave: true,
     saveUninitialized: true,
     cookie:  {maxAge: 15 * 60 * 1000, secure: false}
