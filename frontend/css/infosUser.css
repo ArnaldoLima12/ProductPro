@@ -81,6 +81,47 @@
     color: white;
 }
 
+.error
+{   
+    background-color:  rgb(255, 87, 87);
+    animation: error 3s ease-in-out;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    position: absolute;
+}
+
+@keyframes error
+{
+    0% {
+       
+        transform: scale(0.7);
+        background-color:  rgba(255, 87, 87, 0.143);
+    }
+
+    25%
+    { 
+        background-color:  rgba(255, 87, 87, 0.458);
+    }
+
+    50%
+    {   
+        transform: scale(1);
+        background-color:  rgb(255, 87, 87);
+    }
+
+    75%
+    {
+        background-color:  rgba(255, 87, 87, 0.458);
+    }
+
+    100%
+    {   
+        transform: scale(0.7);
+        background-color:  rgba(255, 87, 87, 0.143);
+    }
+}
 
 @media (width < 935px)
 {   

@@ -8,11 +8,12 @@ exports.photoUpdate = async (req, res) =>
     if(!userUpdate)
     {   
         console.log('falso');
+        console.log(user.erros);
         res.render('perfil', {erro : user.erros, user: req.session.user});
     }
     else
     {   
-        req.session.user = userUpdate;
+        req.session.user = user.User;
         res.redirect('/home/perfil');
     }
 }

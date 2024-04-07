@@ -6,7 +6,7 @@ exports.home = (req, res) =>
 exports.perfil = (req, res) =>
 {   
     console.log(req.session.user);
-    res.render('perfil', {user: req.session.user})
+    res.render('perfil', {erro: [], user: req.session.user})
 }
 
 exports.logout = (req, res) =>

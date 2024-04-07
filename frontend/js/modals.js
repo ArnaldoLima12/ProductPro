@@ -11,4 +11,10 @@ photoButton.addEventListener('click', e =>
 closeButton.addEventListener('click', e =>
 {
     modal.close();
-})
+});
+
+const errorElement = document.querySelector('.error');
+
+errorElement.addEventListener('animationend', () => {
+    errorElement.style.display = 'none'; // Esconde o elemento após o término da animação
+});

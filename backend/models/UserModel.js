@@ -36,11 +36,12 @@ class User
         try
         {   
            let userUpdate = await users.findOneAndUpdate({_id: this.#user._id}, {$set: {photo: file.filename}}, {new : true});
-           return userUpdate;
+           this.#user = userUpdate;
+           return true;
         }
         catch(err)
         {   
-            this.erros.pop();
+          
             this.erros.push('Erro ao atualizar imagem');
             return false;
         }
