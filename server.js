@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const MemoryStore = require('memorystore')(session)
 require('./backend/db/conectionDB.js');
 
 const path = require('path');
@@ -15,6 +16,9 @@ app.set('view engine', 'ejs'); // Renderizador das views
 app.use(session({
     name: 'ProductPro',
     secret: 'dajsfafyfa9jf9sasasyfa9hf9ashfa',
+    store: new MemoryStore({
+        checkPeriod: 86400000 // prune expired entries every 24h
+      }),
     resave: false,
     saveUninitialized: false,
     cookie:  {maxAge: 15 * 60 * 1000, secure: false}
