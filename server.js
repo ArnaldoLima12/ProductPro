@@ -34,7 +34,7 @@ app.use('/home', routerPanel);
 
 // Rota para página não encontradaa
 app.use((req, res, next) => {
-    if (res.status(404)) res.status(404).render('404');
+    if (res.status(404)) res.status(404).render('404'); //DSADA
 });
 
 // Inicia o servidor
