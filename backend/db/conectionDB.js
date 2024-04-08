@@ -10,5 +10,5 @@ let conection = async () =>
     console.log('Conectado com sucesso');
 }
 
-conection();
+conection().catch(err => console.log('Erro no banco de dados:', err));
 

@@ -1,5 +1,5 @@
 const express = require('express');
-const {initSession} = require('./backend/config/session.js');
+const session = require('./backend/config/session.js');
 require('./backend/db/conectionDB.js');
 
 const path = require('path');
@@ -15,7 +15,9 @@ app.set('view engine', 'ejs'); // Renderizador das views
 
 const routerLogin = require('./backend/routers/routerLogin.js'); //Raiz das ROTAS //Substituindo as rotas pelas rotas definidas no arquivo de rotas
 const routerPanel = require('./backend/routers/routerPanel.js');
-initSession(app);
+
+session.initSession(app);
+
 
 //Rotas
 app.use('/', routerLogin);
