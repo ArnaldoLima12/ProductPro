@@ -32,7 +32,7 @@ const routerPanel = require('./backend/routers/routerPanel.js');
 app.use('/', routerLogin);
 app.use('/home', routerPanel);
 
-// Rota para página não encontrada
+// Rota para página não encontradaa
 app.use((req, res, next) => {
     if (res.status(404)) res.status(404).render('404');
 });
