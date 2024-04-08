@@ -6,7 +6,7 @@ const options = {
 
 let conection = async () =>
 {
-    await mongoose.connect("mongodb+srv://arnaldolima588:LeH0OrjJEKGTrcgA@productpro.ziduzyn.mongodb.net/?retryWrites=true&w=majority&appName=productpro", options);
+    await mongoose.connect('mongodb+srv://arnaldolima588:puiMkwO0voFh532Y@product.ksq95do.mongodb.net/?retryWrites=true&w=majority&appName=Product', options);
     console.log('Conectado com sucesso');
 }
 
