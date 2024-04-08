@@ -24,85 +24,85 @@
       </header>
 
       <main class="main">
-          <%if(erro.length > 0){%>
-          <p class="error"><%=erro%></p>
-          <%}%>
+        <%if(erro.length > 0){%>
+        <p class="error"><%=erro%></p>
+        <%}%>
 
           <article>
             <div class="infos-user">
 
               <div class="photo-user">
-                <img src="/uploads/<%=user.photo%>" alt="user">
-                <h3><%=user.name%></h3>
-              </div>
+                <img src="<%=user.photo.data%>" alt="user">
+        <h3><%=user.name%></h3>
+    </div>
 
-              <div class="options">
-                <button id="passwordbtn">Alterar senha</button>
-                <button>Alterar nome</button>
-                <button id="photo">Alterar imagem</button>
-                <%if(user.admin) {%>
-                <button>Ver perfils</button>
-                <%}%>
+    <div class="options">
+      <button id="passwordbtn">Alterar senha</button>
+      <button>Alterar nome</button>
+      <button id="photo">Alterar imagem</button>
+      <%if(user.admin) {%>
+      <button>Ver perfils</button>
+      <%}%>
               </div>
 
               <div class="info">
                   <h4>Informação do usuário</h4>
                   <p><span>Id:</span> <%=user._id%></p>
-                  <p><span>E-mail:</span> <%=user.email%></p>
-                  <p><span>Administrador:</span> <%= user.admin ? 'Sim' : 'Não' %></p>
-              </div>
-            </div>
-          </article>
-      </main>
-
-      <dialog class="modal" id="img">
-        <div class="headerModal">
-          <p>Alterar imagem</p>
-        </div>
-
-        <div class="mainModal">
-          <form method="POST" action="/home/perfil/updatePhoto" enctype="multipart/form-data">
-
-            <label class="custum-file-upload" for="file">
-              <div class="icon">
-                <i class="bi bi-card-image"></i>
-              </div>
-              <div class="text">
-                <span>Click to upload image</span>
-              </div>
-              <input type="file" id="file" name="file" accept="image/*">
-            </label>
-
-            <input type="submit" value="Enviar">
-          </form>
-        </div>
-
-        <div class="footerModal">
-          <button class="closeButton">Fechar</button>
-        </div>
-      </dialog>
-
-      <dialog class="modal" id="pass">
-        <div class="headerModal">
-          <p>Alterar senha</p>
-        </div>
-
-        <div class="mainModal">
-          <form method="POST" action="/home/perfil/updatePassword">
-            <label for="password">Nova senha</label>
-            <input type="text" id="password" name="password" required>
-            <label for="repetPassword">Digite novamente</label>
-            <input type="text" name="repetPassword" id="repetPassword" required>
-            <input type="submit" value="Enviar">
-          </form>
-        </div>
-
-        <div class="footerModal">
-          <button class="closeButton">Fechar</button>
-        </div>
-      </dialog>
-
+      <p><span>E-mail:</span> <%=user.email%></p>
+      <p><span>Administrador:</span> <%= user.admin ? 'Sim' : 'Não' %></p>
     </div>
+  </div>
+  </article>
+  </main>
+
+  <dialog class="modal" id="img">
+    <div class="headerModal">
+      <p>Alterar imagem</p>
+    </div>
+
+    <div class="mainModal">
+      <form method="POST" action="/home/perfil/updatePhoto" enctype="multipart/form-data">
+
+        <label class="custum-file-upload" for="file">
+          <div class="icon">
+            <i class="bi bi-card-image"></i>
+          </div>
+          <div class="text">
+            <span>Click to upload image</span>
+          </div>
+          <input type="file" id="file" name="file" accept="image/*">
+        </label>
+
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+
+    <div class="footerModal">
+      <button class="closeButton">Fechar</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="pass">
+    <div class="headerModal">
+      <p>Alterar senha</p>
+    </div>
+
+    <div class="mainModal">
+      <form method="POST" action="/home/perfil/updatePassword">
+        <label for="password">Nova senha</label>
+        <input type="text" id="password" name="password" required>
+        <label for="repetPassword">Digite novamente</label>
+        <input type="text" name="repetPassword" id="repetPassword" required>
+        <input type="submit" value="Enviar">
+      </form>
+    </div>
+
+    <div class="footerModal">
+      <button class="closeButton">Fechar</button>
+    </div>
+  </dialog>
+
+  </div>
   </div>
 </body>
 

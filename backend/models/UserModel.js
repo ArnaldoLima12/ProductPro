@@ -49,11 +49,11 @@ class User
         }
     }
 
-    async updatePhoto(file)
+    async updatePhoto(buffer, type)
     {   
         try
         {   
-           let userUpdate = await users.findOneAndUpdate({_id: this.#user._id}, {$set: {photo: file.filename}}, {new : true});
+           let userUpdate = await users.findOneAndUpdate({_id: this.#user._id}, {$set: {photo: {data: buffer, contentType: type}}}, {new : true});
            this.#user = userUpdate;
            return true;
         }

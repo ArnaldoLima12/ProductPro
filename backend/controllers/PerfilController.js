@@ -1,4 +1,8 @@
 const userSchema = require('../models/UserModel.js');
+const env = require('dotenv').config();
+const axios = require('axios');
+const fetch = require('node-fetch');
+
 
 
 exports.updatePassword = async (req, res) =>
@@ -18,9 +22,31 @@ exports.updatePassword = async (req, res) =>
 
 
 exports.photoUpdate = async (req, res) =>
-{   
+{       
+
     let user = new userSchema(req.session.user);
-    let userUpdate = await user.updatePhoto(req.file);
+    let {mimetype, buffer} = req.file;
+    let imagemBase64 = buffer.toString('base64');
+
+    try
+    {   
+        const response = await fetch(`https://api.imgbb.com/1/upload?expiration=600&key=${process.env.IMGBB_KEY}`, {
+            method: 'POST',
+            body: new URLSearchParams({
+              image: imagemBase64
+            })
+          });
+        
+          const responseData = await response.json();
+          console.log(responseData);
+    }
+    catch(err)
+    {
+       console.log('Deu erro', err);
+    }
+
+
+    let userUpdate = await user.updatePhoto(buffer.toString('base64'), mimetype);
     validateErro(user, userUpdate, 'perfil', '/home/perfil', req, res);
 }
 
