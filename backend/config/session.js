@@ -4,7 +4,7 @@ const store =  new MongoDBStore({
     uri: 'mongodb+srv://arnaldolima588:puiMkwO0voFh532Y@product.ksq95do.mongodb.net/?retryWrites=true&w=majority&appName=Product',
     databaseName: 'productpro',
     collection: 'session'
-});
+}, function(erro) {console.log(erro)});
 
 
 const initSession = app => {
