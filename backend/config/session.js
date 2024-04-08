@@ -1,18 +1,25 @@
+const env = require('dotenv').config();
 const session = require('express-session');
-const MongoStore = require('connect-mongo'); 
+const MongoStore = require('connect-mongo');
 
-let options = {mongoUrl:'mongodb+srv://arnaldolima588:puiMkwO0voFh532Y@product.ksq95do.mongodb.net/?retryWrites=true&w=majority&appName=Product', dbName: 'productpro', collectionName: 'sessions', autoRemove: 'native', autoRemoveInterval: 10};
+// Configuração das opções para o MongoStore
+let options = {
+    mongoUrl: process.env.URI_DATABASE,
+    dbName: process.env.NAME_DATABASE, 
+    collectionName: 'sessions',
+    autoRemove: 'native', 
+    autoRemoveInterval: 10
+};
 
 const initSession = app => {
+    // Inicialização da sessão utilizando o MongoStore
     app.use(session({
-        name: 'ProductPro',
-        secret: 'dajsfafyfa9jf9sasasyfa9hf9adsadadadashfa',
+        secret: process.env.SECRET_SESSION,
         resave: true,
         saveUninitialized: false,
-        store: MongoStore.create(options),
+        store: MongoStore.create(options), // Passa as opções diretamente
         cookie: {maxAge: 15 * 60 * 1000, secure: false}
     }));
 };
-
 
 module.exports = { initSession };
