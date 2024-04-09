@@ -11,7 +11,7 @@ async function uploadAndGetURL(img64)
         });
 
         const photo = await response.json();
-        console.log(photo);
+        return photo.data.url;
     }
     catch(error)
     {
