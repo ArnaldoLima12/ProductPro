@@ -81,6 +81,15 @@
     color: white;
 }
 
+/*Preview da imagem perfil upload*/
+
+#preview
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
 .error
 {   
     background-color:  rgb(255, 87, 87);

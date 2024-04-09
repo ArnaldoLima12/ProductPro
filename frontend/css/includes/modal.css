@@ -88,7 +88,7 @@
 /*File input*/
 
 .custum-file-upload {
-    height: 100px;
+    height: 150px;
     width: 90%;
     display: flex;
     align-items: center;
@@ -110,11 +110,11 @@
     fill: rgba(75, 85, 99, 1);
   }
   
-  .custum-file-upload .text {
+  /* .custum-file-upload .text {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  } */
   
   .custum-file-upload .text span {
     font-weight: 400;
@@ -123,4 +123,19 @@
   
   .custum-file-upload input {
     display: none;
+  }
+
+  .text
+  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  #image-preview
+  {
+    height: 150px;
+    width: 80%;
+    border-radius: 5px;
   }
