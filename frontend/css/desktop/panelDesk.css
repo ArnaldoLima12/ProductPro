@@ -1,96 +1,58 @@
-
-
-*
+@media (width > 900px)
 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-family: "Poppins", sans-serif;
-}
+    
+    .panel
+    {   
+        position: absolute;
+        left: 70px;
+        z-index: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: var(--white);
+        color: var(--dark);
+        transition: all 0.3s linear;
+    }
 
-.panel
-{   
-    position: absolute;
-    left: 70px;
-    z-index: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    background-color: var(--white);
-    color: var(--dark);
-    transition: all 0.3s linear;
-}
+    .top
+    {   
+        display: flex;
+        align-items: center;
+        justify-content: space-between;  
+        padding: 10px;
+        border-bottom: 1px solid rgb(192, 192, 192);
+        height: 80px;
+    }
 
-.top
-{   
-    display: flex;
-    align-items: center;
-    justify-content: space-between;  
-    padding: 10px;
-    border-bottom: 1px solid rgb(192, 192, 192);
-    height: 80px;
-}
+    .top > .info h1, p
+    {
+        margin: 0;
+    }
 
-.top > .info h1, p
-{
-    margin: 0;
-}
+    .top > .theme
+    {
+        margin-right: 25px;
+        font-size: 24px;
+        cursor: pointer;
+    }
 
-.top > .theme
-{
-    margin-right: 25px;
-    font-size: 24px;
-    cursor: pointer;
-}
+    .main
+    {
+        height: calc(100vh - 80px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.main
-{
-    height: calc(100vh - 80px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.main > article
-{
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    height: 100%;
-}
-
-
-
-@media (width < 695px)
-{
     .main > article
     {
-      flex-direction: column;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100%;
+        border: 2px solid red;
     }
-
-    @media (width < 500px)
-    {
-        .top > .infos
-        {
-            font-size: 14px;
-        }
-    
-        .top > .theme > 
-        {   
-            font-size: 214px;
-            margin-right: 0;
-        }
-    
-        @media (width < 410px)
-        {
-            .top > .infos
-            {
-                font-size: 11px;
-            }
-        }
-    }
-
 }
+
