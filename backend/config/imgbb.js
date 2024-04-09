@@ -5,7 +5,6 @@ async function uploadAndGetURL(img64)
 {
     try
     {   
-        console.log()
         let response = await fetch(`https://api.imgbb.com/1/upload?key=${process.env.IMGBB_KEY}`, {
             method: 'POST',
             body: new URLSearchParams({image: img64})
