@@ -53,56 +53,55 @@
     </div>
   </div>
   </article>
-  </main>
+      </main>
 
-  <dialog class="modal" id="img">
-    <div class="headerModal">
-      <p>Alterar imagem</p>
-    </div>
+      <dialog class="modal" id="img">
+        <div class="headerModal">
+          <p>Alterar imagem</p>
+        </div>
 
-    <div class="mainModal">
-      <form method="POST" action="/home/perfil/updatePhoto" enctype="multipart/form-data">
+      <div class="mainModal">
+        <form method="POST" action="/home/perfil/updatePhoto" enctype="multipart/form-data">
+          <label class="custum-file-upload" for="file">
+            <div class="icon">
+              <i class="bi bi-card-image"></i>
+            </div>
+            <div class="text">
+              <span>Click to upload image</span>
+            </div>
+            <input type="file" id="file" name="file" accept="image/*">
+          </label>
 
-        <label class="custum-file-upload" for="file">
-          <div class="icon">
-            <i class="bi bi-card-image"></i>
-          </div>
-          <div class="text">
-            <span>Click to upload image</span>
-          </div>
-          <input type="file" id="file" name="file" accept="image/*">
-        </label>
-
-        <input type="submit" value="Enviar">
-      </form>
-    </div>
-
-    <div class="footerModal">
-      <button class="closeButton">Fechar</button>
-    </div>
-  </dialog>
-
-  <dialog class="modal" id="pass">
-    <div class="headerModal">
-      <p>Alterar senha</p>
-    </div>
-
-    <div class="mainModal">
-      <form method="POST" action="/home/perfil/updatePassword">
-        <label for="password">Nova senha</label>
-        <input type="text" id="password" name="password" required>
-        <label for="repetPassword">Digite novamente</label>
-        <input type="text" name="repetPassword" id="repetPassword" required>
-        <input type="submit" value="Enviar">
-      </form>
+          <input type="submit" value="Enviar">
+        </form>
     </div>
 
     <div class="footerModal">
       <button class="closeButton">Fechar</button>
     </div>
-  </dialog>
+      </dialog>
 
-  </div>
+      <dialog class="modal" id="pass">
+        <div class="headerModal">
+          <p>Alterar senha</p>
+        </div>
+
+        <div class="mainModal">
+          <form method="POST" action="/home/perfil/updatePassword">
+            <label for="password">Nova senha</label>
+            <input type="text" id="password" name="password" required>
+            <label for="repetPassword">Digite novamente</label>
+            <input type="text" name="repetPassword" id="repetPassword" required>
+            <input type="submit" value="Enviar">
+          </form>
+        </div>
+
+        <div class="footerModal">
+          <button class="closeButton">Fechar</button>
+        </div>
+      </dialog>
+
+      </div>
   </div>
 </body>
 

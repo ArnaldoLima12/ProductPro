@@ -52,7 +52,7 @@ class User
     async updatePhoto(url)
     {   
         try
-        {  console.log(url);
+        {  
            let userUpdate = await users.findOneAndUpdate({_id: this.#user._id}, {$set: {photo: url}}, {new : true});
            this.#user = userUpdate;
            return true;
