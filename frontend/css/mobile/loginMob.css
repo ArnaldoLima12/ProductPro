@@ -8,7 +8,7 @@
     body
     {   
        
-        background-color: white;
+        background-color: var(--background-box);
         display: flex;
         align-items: center;
         justify-content: center;

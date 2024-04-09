@@ -3,7 +3,7 @@
     --white: #fff;
     --dark: #000;
     --box-shadow: #505050;
-    --gray-box: #dcdcdc;
+    --background-box: #dcdcdc;
 }
 
 [data-theme = 'dark']
@@ -11,5 +11,5 @@
     --white: #000;
     --dark: #fff;
     --box-shadow: #eeeeee;
-    --gray-box: #141414;
+    --background-box: #222222;
 }
