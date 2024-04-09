@@ -15,7 +15,7 @@ async function uploadAndGetURL(img64)
     }
     catch(error)
     {
-        console.log('Erro -> :', error);
+        return false;
     }
 }
 

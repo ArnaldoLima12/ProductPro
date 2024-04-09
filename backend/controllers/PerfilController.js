@@ -7,8 +7,8 @@ exports.updatePassword = async (req, res) =>
 
     if(req.body.password === req.body.repetPassword && req.body.password)
     {
-        let userUpadate = await user.updatePassword(req.body.password);
-        validateErro(user, userUpadate, 'perfil', '/home/perfil', req, res);
+        let updated = await user.updatePassword(req.body.password);
+        validateErro(user, updated, 'perfil', '/home/perfil', req, res);
     }
     else
     {
@@ -16,19 +16,36 @@ exports.updatePassword = async (req, res) =>
     }
 }
 
-
 exports.photoUpdate = async (req, res) =>
 {       
 
     let user = new userSchema(req.session.user);
-    let {buffer} = req.file;
+    let updated;
 
-    let photo = await uploadAndGetURL(buffer.toString('base64'));
-
-    let userUpdate = await user.updatePhoto(photo);
-    validateErro(user, userUpdate, 'perfil', '/home/perfil', req, res);
+    if(req.file)
+    {   
+        if(req.file.mimetype == 'image/jpeg' || req.file.mimetype == 'image/png')
+        {
+            let {buffer} = req.file;
+            let photo = await uploadAndGetURL(buffer.toString('base64'));
+            (!photo) ? photo = '/imgs/user.png' : photo;
+            
+            updated = await user.updatePhoto(photo);
+        }
+        else
+        {
+            updated = false;
+            user.erros.push('Arquivo invalido');
+        }
+    }
+    else
+    {   
+        updated = false;
+        user.erros.push('Nenhum arquivo selecionado!');
+    }
+    
+    validateErro(user, updated, 'perfil', '/home/perfil', req, res);
 }
-
 
 function validateErro(user, bool, view, url, req, res)
 {
