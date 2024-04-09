@@ -49,11 +49,11 @@ class User
         }
     }
 
-    async updatePhoto(buffer, type)
+    async updatePhoto(url)
     {   
         try
-        {   
-           let userUpdate = await users.findOneAndUpdate({_id: this.#user._id}, {$set: {photo: {data: buffer, contentType: type}}}, {new : true});
+        {  console.log(url);
+           let userUpdate = await users.findOneAndUpdate({_id: this.#user._id}, {$set: {photo: url}}, {new : true});
            this.#user = userUpdate;
            return true;
         }
