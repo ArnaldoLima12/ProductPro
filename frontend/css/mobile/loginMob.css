@@ -65,15 +65,15 @@
         margin-top: 25px;
         display: flex;
         flex-direction: column;
-        gap: 10px;
-        width: 80%;
+        gap: 20px;
+        width: 90%;
         align-items: center;
     }
 
     
     .form-grup
     {   
-        width: 90%;
+        width: 100%;
         border: 1px solid rgb(94, 94, 94);
         padding: 5px;
         border-radius: 4px;
@@ -87,19 +87,20 @@
 
     .form-grup > input
     {   
-        height: 20px;
+        height: 35px;
         width: 100%;
         border: none;
         outline: none;
         background-color: transparent;
         color: var(--dark);
+        font-size: 16px;
     }
 
     .form > input[type='submit']
     {   
         margin: auto;
-        width: 40%;
-        height: 35px;
+        width: 50%;
+        height: 40px;
         background-color: rgb(58, 199, 152);
         border-radius: 5px;
         border: none;
