@@ -11,7 +11,7 @@
 .Navegation
 {   
     position: absolute;
-    height: 100%;
+    height: 100vh;
     left: 0;
     background-color: rgb(56, 184, 141);
     width: 70px;
