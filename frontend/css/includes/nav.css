@@ -11,7 +11,7 @@
 .Navegation
 {   
     position: absolute;
-    height: 100vh;
+    height: 100%;
     left: 0;
     background-color: rgb(56, 184, 141);
     width: 70px;
@@ -79,7 +79,7 @@
 .logout 
 {
     position: absolute;
-    bottom: 5px;
+    bottom: 10px;
 }
 
 

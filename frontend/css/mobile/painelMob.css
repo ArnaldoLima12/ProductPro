@@ -28,6 +28,7 @@
         align-items: center;
         justify-content: center;
         gap: 10px;
+        border: 0.5px solid black;
     }
 
     .main > article
@@ -41,5 +42,6 @@
         max-height: 90%;
         padding: 5px;
         gap: 25px;
+        border: 0.5px solid black;
     }
 }
