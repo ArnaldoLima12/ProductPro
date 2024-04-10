@@ -1,18 +1,5 @@
 @media (width > 900px)
 {
-    
-    .panel
-    {   
-        position: absolute;
-        left: 70px;
-        z-index: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        background-color: var(--white);
-        color: var(--dark);
-        transition: all 0.3s linear;
-    }
 
     .top
     {   
@@ -24,7 +11,7 @@
         height: 80px;
     }
 
-    .top > .info h1, p
+    .top > .infos h1, p
     {
         margin: 0;
     }
@@ -52,7 +39,6 @@
         justify-content: center;
         width: 80%;
         height: 100%;
-        border: 2px solid red;
     }
 }
 

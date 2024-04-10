@@ -84,7 +84,16 @@
     {
       .card
       {
+       
         width: 100%;
       }
     }
+}
+
+@media (height < 770px)
+{
+  .card
+  {
+    height: 120px;
+  }
 }
