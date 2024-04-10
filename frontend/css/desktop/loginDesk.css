@@ -20,7 +20,7 @@
     grid-template-rows: 100%;
     grid-template-areas: 
     "info form";
-    box-shadow: 3px 3px 10px black;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.575);
     border-radius: 20px;
 }
 

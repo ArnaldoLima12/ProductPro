@@ -1,15 +1,15 @@
 :root
 {
     --white: #fff;
-    --dark: #000;
+    --dark: #000000;
     --box-shadow: #505050;
-    --background-box: #dcdcdc;
+    --background-box: #e6e6e6;
 }
 
 [data-theme = 'dark']
 {
-    --white: #000;
+    --white: #000000;
     --dark: #fff;
     --box-shadow: #eeeeee;
-    --background-box: #222222;
+    --background-box: #292929;
 }
