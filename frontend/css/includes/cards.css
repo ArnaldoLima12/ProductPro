@@ -90,10 +90,10 @@
     }
 }
 
-@media (height < 770px)
+@media (height < 760px)
 {
   .card
   {
-    height: 120px;
+    max-height: 100%;
   }
 }
