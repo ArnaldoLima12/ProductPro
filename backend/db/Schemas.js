@@ -1,3 +1,4 @@
+const { name } = require('ejs');
 const moongose = require('mongoose');
 
 const userSchema = new moongose.Schema({
@@ -8,12 +9,20 @@ const userSchema = new moongose.Schema({
     admin: Boolean
 });
 
-
+const productSchema = new moongose.Schema({
+    idProduct: String,
+    name: String,
+    category: String,
+    price: Number,
+    photo: String
+})
 
 
 const users = moongose.model('users', userSchema);
+const products = moongose.model('products', productSchema)
 
 module.exports = 
 {
-    users
+    users,
+    products
 }

@@ -1,4 +1,8 @@
+@import url('./includes/variables.css');
+@import url('./painel.css');
+@import url('./includes/nav.css');
 @import url('./includes/modal.css');
+
 
 .infos-user
 {
@@ -33,6 +37,7 @@
     border-radius: 50%;
     border: 0.5px solid #ccc;
 }
+
 .infos-user > .info
 {
     grid-area: info;
@@ -40,11 +45,13 @@
     font-size: 18px;
    
 }
+
 .infos-user > .info > h4
 {
     text-align: center;
     margin-bottom: 10px;
 }
+
 .infos-user > .info > p > span
 {
     font-weight: bold;
@@ -66,7 +73,7 @@
 .options > button
 {
     padding: 10px;
-    width: 50%;
+    width: 80%;
    
     font-weight: bold;
     background-color: rgb(68, 185, 68);
@@ -81,6 +88,47 @@
     color: white;
 }
 
+@media (width < 935px)
+{   
+
+    .options
+    {
+        padding: 5px;
+    }
+    .options > button
+    {
+        width: 90%;
+    }
+}
+
+@media (width < 680px)
+{
+    .options > button
+    {
+        font-size: 10px;
+    }
+
+    .infos-user > .info h4
+    {
+        font-size: 16px;
+    }
+
+    .infos-user > .info 
+    {
+        font-size: 12px;
+    }
+}
+
+@media (width < 500px)
+{
+    .infos-user
+    {
+        grid-template-areas: 
+        "photo photo photo photo"
+        "info info info info"
+        "option option option option";
+    }
+}
 /*Preview da imagem perfil upload*/
 
 #preview
@@ -172,47 +220,3 @@
     }
 }
 
-@media (width < 935px)
-{   
-
-    .options
-    {
-        padding: 5px;
-    }
-    .options > button
-    {
-        width: 100%;
-    }
-
-    @media (width < 680px)
-    {
-        .options > button
-        {
-            font-size: 10px;
-        }
-
-        .infos-user > .info h4
-        {
-            font-size: 16px;
-        }
-    
-        .infos-user > .info 
-        {
-            font-size: 12px;
-        }
-    }
-}
-
-
-
-
-@media (width < 500px)
-{
-    .infos-user
-    {
-        grid-template-areas: 
-        "photo photo photo photo"
-        "info info info info"
-        "option option option option";
-    }
-}

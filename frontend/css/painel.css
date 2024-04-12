@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reddit+Mono:wght@200..900&display=swap');
 @import url('./includes/variables.css');
-@import url('./desktop/painelDesk.css');
-@import url('./mobile//painelMob.css');
 @import url('./includes/cards.css');
 @import url('./includes/nav.css');
 
@@ -14,15 +11,106 @@
     font-family: "Poppins", sans-serif;
 }
 
-    .panel
+.panel
+{   
+    position: absolute;
+    left: 70px;
+    z-index: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: var(--white);
+    color: var(--dark);
+    transition: all 0.3s linear;
+}
+
+
+@media (width > 900px)
+{    
+
+    .top
     {   
-        position: absolute;
-        left: 70px;
-        z-index: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
-        background-color: var(--white);
-        color: var(--dark);
-        transition: all 0.3s linear;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;  
+        padding: 10px;
+        border-bottom: 1px solid rgb(192, 192, 192);
+        height: 80px;
     }
+
+    .top > .infos h1, p
+    {
+        margin: 0;
+    }
+
+    .top > .theme
+    {
+        margin-right: 25px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .main
+    {
+        height: calc(100vh - 80px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main > article
+    {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100%;
+    }
+}
+
+@media (width <= 900px)
+{   
+
+    .top
+    {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 5px;
+        justify-content: space-between;
+        border-bottom: 1px solid  rgb(192, 192, 192);
+    }
+
+    .top > .infos >  h1
+    {
+        font-size: 24px;
+    }
+
+    .top > .theme
+    {
+        font-size: 20px;
+    }
+    .main
+    {
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .main > article
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       
+        width: 80%;
+        height: 90%;
+        padding: 5px;
+        gap: 25px;
+    }
+}

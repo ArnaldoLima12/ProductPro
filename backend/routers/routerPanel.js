@@ -4,6 +4,7 @@ const upload = require('../config/multer.js');
 
 const PanelController = require('../controllers/PanelController.js');
 const PerfilController = require('../controllers/PerfilController.js');
+const ProdutosController = require('../controllers/ProdutosController.js');
 
 
 
@@ -12,10 +13,14 @@ const PerfilController = require('../controllers/PerfilController.js');
 router.get('/', auth, PanelController.home);
 router.get('/perfil', auth, PanelController.perfil);
 router.get('/logout', auth, PanelController.logout);
+router.get('/product', auth, PanelController.produtos);
 
 
 //Rotas do painel (perfil)
 router.post('/perfil/updatePassword', PerfilController.updatePassword);
 router.post('/perfil/updatePhoto', auth, upload.single('file'), PerfilController.photoUpdate)
+
+//Rotas do painel (produtos)
+router.get('/product/list', auth, ProdutosController.listProducts);
 
 module.exports = router;

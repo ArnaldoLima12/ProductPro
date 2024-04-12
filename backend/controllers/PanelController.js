@@ -5,7 +5,12 @@ exports.home = (req, res) =>
 
 exports.perfil = (req, res) =>
 {   
-    res.render('perfil', {erro: [], user: req.session.user})
+    res.render('perfil', {erro: [], user: req.session.user});
+}
+
+exports.produtos = (req, res) =>
+{
+    res.render('produtos', {erro: [], user: req.session.user});
 }
 
 exports.logout = (req, res) =>
