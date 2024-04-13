@@ -1,16 +1,16 @@
 const table = document.querySelector('.table-body-content');
 
-let listContent = () =>
+let listContent = async () =>
 {
-    fetch('/home/product/list')
-    .then(response =>
-    {
-        console.log(response.json());
-    })
-    .catch(error =>
-    {
+   try
+   {
+        let response = await fetch('/home/product/list');
+        console.log(await response.json());
+   }
+   catch(error)
+   {
         console.log(error);
-    });
+   }
 }
 
 listContent();

@@ -21,6 +21,7 @@ router.post('/perfil/updatePassword', PerfilController.updatePassword);
 router.post('/perfil/updatePhoto', auth, upload.single('file'), PerfilController.photoUpdate)
 
 //Rotas do painel (produtos)
+router.post('/product/create', auth, ProdutosController.createProduct)
 router.get('/product/list', auth, ProdutosController.listProducts);
 
 module.exports = router;

@@ -1,6 +1,44 @@
-const {products} = require('../db/Schemas.js');
+const { products } = require('../db/Schemas.js');
+const Product = require('../models/ProductModel.js')
 
-exports.listProducts = (req, res) =>
+
+
+exports.createProduct = (req, res) =>
+{
+        try
+        {   
+            let product = new Product();
+            let body = req.body;
+
+            if(body.name && body.price && body.category)
+            {   
+               
+                let create = product.createProduct(req.body);
+
+                if(create)
+                {   
+                    req.session.messageSucess = product.message;
+                    res.redirect('/home/product');
+                }
+                else
+                {
+                    res.render('produtos', {erro: product.erros})
+                }
+            }
+            else
+            {
+                res.render('produtos', {erro: 'Todos os campos devem ser preenchidos!'});
+            }
+           
+        }
+        catch(error)
+        {
+           res.render('produtos', {erro: 'Erro ao tentar conectar-se ao servidor'});
+        }
+}
+
+exports.listProducts = async (req, res) =>
 {   
-    return JSON.parse({id: 23321, name: 'Arroz', price: '21.43', category: 'Derivados'}); 
+    let product = new Product();
+    res.send(await product.listProducts());
 }

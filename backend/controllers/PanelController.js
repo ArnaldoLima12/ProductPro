@@ -10,7 +10,7 @@ exports.perfil = (req, res) =>
 
 exports.produtos = (req, res) =>
 {
-    res.render('produtos', {erro: [], user: req.session.user});
+    res.render('produtos', {erro: [], sucessMessage: req.session.messageSucess || '', user: req.session.user});
 }
 
 exports.logout = (req, res) =>

@@ -1,10 +1,12 @@
 const modal = document.querySelectorAll('.modal');
 const closeButton = document.querySelectorAll('.closeButton');
+let modalSelected;
+
 
 function returnModal(modalPrefix)
 {
     let modalOption = [...modal].filter(element =>
-    {
+    {   
         return element.id === modalPrefix;
     });
 
@@ -20,6 +22,25 @@ function closeModal(modal)
             modal.close();
         });
     });
+}
+
+function selectedModal(modalprefix, button)
+{
+    try
+    {   
+        button = document.getElementById(button);
+
+        button.addEventListener('click', () =>
+        {
+            modalSelected = returnModal(modalprefix)[0];
+            modalSelected.showModal();
+            closeModal(modalSelected);
+        });
+    }
+    catch(error)
+    {
+        return
+    }
 }
 
 
