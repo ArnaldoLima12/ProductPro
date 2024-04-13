@@ -17,8 +17,7 @@
     left: 70px;
     z-index: 0;
     right: 0;
-    bottom: 0;
-    top: 0;
+   
     background-color: var(--white);
     color: var(--dark);
     transition: all 0.3s linear;
