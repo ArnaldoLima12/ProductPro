@@ -17,7 +17,7 @@ exports.createProduct = (req, res) =>
 
                 if(create)
                 {   
-                    req.session.messageSucess = product.message;
+                    req.session.message = product.sucess;
                     res.redirect('/home/product');
                 }
                 else
@@ -39,6 +39,5 @@ exports.createProduct = (req, res) =>
 
 exports.listProducts = async (req, res) =>
 {   
-    let product = new Product();
-    res.send(await product.listProducts());
+    res.send(await Product.listProducts());
 }

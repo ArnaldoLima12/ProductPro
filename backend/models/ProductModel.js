@@ -3,9 +3,9 @@ const {products} = require('../db/Schemas.js');
 
 class Product
 {   
-    #roduct;
+    
     erros = [];
-    message = [];
+    sucess = [];
 
 
     createProduct(product)
@@ -14,7 +14,8 @@ class Product
         {
             const productSave = new products(product);
             productSave.save();
-            this.message.push('Produto Cadastrado com sucesso!');
+
+            this.sucess.push('Produto Cadastrado com sucesso!');
             return true;
         }
         catch(error)
@@ -24,9 +25,10 @@ class Product
         }
     }
 
-    async listProducts()
+    static async listProducts()
     {   
-        let list =  await products.find()
+        let list =  await products.find();
+        if(list.length < 1) list = ['Nenhum produto cadastrado'];
         return list;
     }
 }

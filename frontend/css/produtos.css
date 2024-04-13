@@ -2,3 +2,72 @@
 @import url('./painel.css');
 @import url('./includes/nav.css');
 @import url('./includes/modal.css');
+
+
+.main > article
+{   
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+}
+
+.actions
+{
+    width: 100%;
+}
+
+.actions > button
+{
+    border-radius: 5px;
+    padding: 10px;
+    letter-spacing: 1px;
+}
+
+.button-create{background-color: rgb(60, 175, 60); color: white;}
+.button-create:hover{background-color: rgb(34, 102, 34); cursor: pointer;}
+
+.tableProducts 
+{
+    width: 100%;
+    overflow: auto;
+}
+
+.tableProducts > table
+{   
+   
+    border-radius: 10px;
+    border-collapse: collapse;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tableProducts th, td
+{   
+    padding: 15px;
+    text-align: left;  
+}
+
+.tableProducts th
+{
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+
+.tableProducts tr:nth-child(even) {
+    background-color: var( --table-variant-one);
+    color: var(--white);
+}
+
+.tableProducts tr:hover {
+   background-color: rgba(168, 255, 233, 0.541);
+   color: rgb(0, 0, 0);
+   transition: all 0.2s linear;
+}
+
+
+@media (width < 800px)
+{
+    
+}

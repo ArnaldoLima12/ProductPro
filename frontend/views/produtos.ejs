@@ -33,18 +33,31 @@
         <article>
 
           <div class="actions">
-            <button id="createBtn">Novo Produto</button>
+            <button id="createBtn" class="button-create">Novo Produto</button>
           </div>
           <div class="tableProducts">
             <table>
               <thead>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Valor</th>
-                <th>Categoria</th>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Valor</th>
+                  <th>Categoria</th>
+                </tr>
               </thead>
               <tbody class="table-body-content">
-
+                <tr>
+                  <td>dsadada</td>
+                  <td>dsadada</td>
+                  <td>dsadada</td>
+                  <td>dsadada</td>
+                </tr>
+                <tr>
+                  <td>dsadada</td>
+                  <td>dsadada</td>
+                  <td>dsadada</td>
+                  <td>dsadada</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -56,18 +69,25 @@
 
   <dialog class="modal" id="product-create">
     <div class="headerModal">
-      <p>Alterar senha</p>
+      <p>Novo produto</p>
     </div>
 
     <div class="mainModal">
       <form method="POST" action="/home/product/create">
-        <label for="name">Nome</label>
-        <input type="text" id="name" name="name">
-        <label for="category">categoria</label>
-        <input type="text" name="category" id="category">
-        <label for="price">preco</label>
-        <input type="text" name="price" id="price">
-        <input type="submit" value="Enviar">
+          <div class="formGroup">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name">
+          </div>
+          <div class="formGroup">
+            <label for="category">Categoria</label>
+            <input type="text" name="category" id="category">
+          </div>
+          <div class="formGroup">
+            <label for="price">Valor</label>
+            <input type="text" name="price" id="price">
+          </div>
+
+          <input type="submit" value="Cadastrar">
       </form>
     </div>
 

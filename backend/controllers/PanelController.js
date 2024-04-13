@@ -9,8 +9,11 @@ exports.perfil = (req, res) =>
 }
 
 exports.produtos = (req, res) =>
-{
-    res.render('produtos', {erro: [], sucessMessage: req.session.messageSucess || '', user: req.session.user});
+{   
+    let menssage = req.session.message;
+    req.session.message = '';
+
+    res.render('produtos', {erro: [], sucessMessage: menssage, user: req.session.user});
 }
 
 exports.logout = (req, res) =>

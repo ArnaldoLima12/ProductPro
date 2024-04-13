@@ -1,8 +1,10 @@
 .modal
 {
-    width: 50%;
+    width: 70%;
     min-width: 200px;
-    height: 350px;
+    max-width: 500px;
+    
+    
     border-radius: 10px;
     margin: auto;
     border-radius: 1px solid black;
@@ -13,16 +15,16 @@
 
 .modal > .headerModal
 {   
-    height: 50px;
+   
     font-size: 20px;
     font-weight: bold;
     border-bottom: 1px solid #ccc;
-    padding: 5px;
+    padding: 10px;
 }
 
 .modal > .mainModal
 {
-    height: 240px;
+    padding: 10px;
     border-bottom: 1px solid #ccc;
 }
 
@@ -35,6 +37,14 @@
     align-items: center;
     justify-content: center;
     padding: 5px;
+    width: 100%;
+}
+
+.mainModal > form > .formGroup
+{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 }
 
 .mainModal> form > input[type='submit']
@@ -43,8 +53,10 @@
     background-color: rgb(68, 196, 68);
     border: none;
     border-radius: 5px;
-    width: 100px;
+    width: 50%;
+    min-width: 100px;
     transition: all 0.3s linear;
+    font-size: 16px;
 }
 
 .mainModal> form > input[type='submit']:hover
@@ -53,16 +65,17 @@
    color: white;
    background-color: rgb(46, 129, 46);
 }
-.mainModal > form > input[type='text']
+.mainModal > form  input[type='text']
 {
   border: 1px solid #ccc;
   letter-spacing: 1px;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
+  width: 100%;
 }
 .modal > .footerModal
 {   
-    height: 50px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -71,7 +84,7 @@
 .modal > .footerModal > .closeButton
 {
     padding: 10px;
-    font-size: 12px;
+    font-size: 14px;
     background-color: rgb(194, 53, 53);
     border: none;
     border-radius: 5px;
