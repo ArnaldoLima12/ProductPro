@@ -5,7 +5,7 @@ let listContent = () =>
     fetch('/home/product/list')
     .then(response =>
     {
-        console.log(response);
+        console.log(response.json());
     })
     .catch(error =>
     {
