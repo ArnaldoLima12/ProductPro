@@ -22,6 +22,10 @@
     background-color: var(--white);
     color: var(--dark);
     transition: all 0.3s linear;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
@@ -92,14 +96,13 @@
     }
     .main
     {   
-        padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 10px;
         overflow: auto;
-        height: calc(100vh - 90px);
+        flex-grow: 2;
     }
 
     .main > article
