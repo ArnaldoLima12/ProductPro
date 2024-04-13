@@ -14,10 +14,11 @@
 .panel
 {   
     position: absolute;
+    top: 0;
+    bottom: 0;
     left: 70px;
     z-index: 0;
     right: 0;
-    height: 100%;
     background-color: var(--white);
     color: var(--dark);
     transition: all 0.3s linear;
@@ -50,11 +51,11 @@
     }
 
     .main
-    {
-        height: calc(100vh - 80px);
+    {   
         display: flex;
         align-items: center;
         justify-content: center;
+        height: calc(100vh - 90px);
     }
 
     .main > article
@@ -64,7 +65,6 @@
         align-items: center;
         justify-content: center;
         width: 80%;
-        height: 100%;
     }
 }
 
@@ -91,13 +91,15 @@
         font-size: 20px;
     }
     .main
-    {
-        height: 100%;
+    {   
+        padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 10px;
+        overflow: auto;
+        height: calc(100vh - 90px);
     }
 
     .main > article
