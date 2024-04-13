@@ -88,6 +88,14 @@
         width: 100%;
       }
     }
+
+    @media (width < 315px)
+    {
+      .card
+      {
+        height: 150px;
+      }
+    }
 }
 
 @media (height < 760px)
@@ -97,3 +105,4 @@
     max-height: 95%;
   }
 }
+
