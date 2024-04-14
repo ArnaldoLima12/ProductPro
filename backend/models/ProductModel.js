@@ -25,11 +25,21 @@ class Product
         }
     }
 
-    static async listProducts()
+    static async listProducts(page = 1, limitItens)
     {   
-        let list =  await products.find();
-        if(list.length < 1) list = ['Nenhum produto cadastrado'];
-        return list;
+        let skip = parseInt((page - 1) * limitItens);
+
+        let list =  await products.find().skip(skip).limit(limitItens);
+        let totalItens = await products.countDocuments();
+        let totalPages = Math.ceil(totalItens / limitItens);
+        
+        let response = {
+            list,
+            totalPages,
+            page
+        };
+
+        return response;
     }
 }
 

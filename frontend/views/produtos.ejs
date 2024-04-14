@@ -23,43 +23,39 @@
       </header>
 
       <main class="main">
-        <%if(sucessMessage){%>
-        <p class="sucess"><%=sucessMessage%></p>
+        <%if(success){%>
+        <p class="success alert"><%=success%></p>
         <%}%>
-        <%if(erro.length > 0){%>
-        <p class="error"><%=erro%></p>
+        <%if(erro){%>
+        <p class="error alert"><%=erro%></p>
         <%}%>
 
         <article>
 
           <div class="actions">
             <button id="createBtn" class="button-create">Novo Produto</button>
+            <button id="createCategoryBtn" class="button-create">Nova Categoria</button>
           </div>
+
           <div class="tableProducts">
             <table>
               <thead>
                 <tr>
-                  <th>ID</th>
                   <th>Nome</th>
                   <th>Valor</th>
                   <th>Categoria</th>
                 </tr>
               </thead>
               <tbody class="table-body-content">
-                <tr>
-                  <td>dsadada</td>
-                  <td>dsadada</td>
-                  <td>dsadada</td>
-                  <td>dsadada</td>
-                </tr>
-                <tr>
-                  <td>dsadada</td>
-                  <td>dsadada</td>
-                  <td>dsadada</td>
-                  <td>dsadada</td>
-                </tr>
+                
               </tbody>
             </table>
+
+          </div>
+
+          <div class="pagination">
+            <button id="next">Proxima</button>
+            <button id="previous">Anterior</button>
           </div>
         </article>
       </main>
@@ -85,6 +81,28 @@
           <div class="formGroup">
             <label for="price">Valor</label>
             <input type="text" name="price" id="price">
+          </div>
+
+          <input type="submit" value="Cadastrar">
+      </form>
+    </div>
+
+    <div class="footerModal">
+      <button class="closeButton">Fechar</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal" id="category-create">
+    <div class="headerModal">
+      <p>Nova categoria</p>
+    </div>
+
+    <div class="mainModal">
+      <form method="POST" action="/home/product/create-category">
+          
+          <div class="formGroup">
+            <label for="name">Nome da categoria</label>
+            <input type="text" id="name" name="name">
           </div>
 
           <input type="submit" value="Cadastrar">

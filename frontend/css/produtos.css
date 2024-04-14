@@ -34,8 +34,6 @@
 
 .tableProducts > table
 {   
-   
-    border-radius: 10px;
     border-collapse: collapse;
     width: 100%;
     overflow: hidden;
@@ -43,28 +41,62 @@
 
 .tableProducts th, td
 {   
-    padding: 15px;
-    text-align: left;  
+    padding: 5px;
+    text-align: left;
+    border: 1px solid #a5a5a5;
 }
 
 .tableProducts th
 {
-    background-color: var(--dark);
+    padding: 10px;
+}
+
+.tableProducts th
+{
+    background-color: rgb(56, 192, 147);
     color: var(--white);
 }
 
-
 .tableProducts tr:nth-child(even) {
-    background-color: var( --table-variant-one);
-    color: var(--white);
+    background-color: #d6d6d6;
+    color: rgb(58, 58, 58);
+}
+
+.tableProducts tr:nth-child(odd) {
+    background-color: rgb(255, 255, 255);
+    color: black;
 }
 
 .tableProducts tr:hover {
-   background-color: rgba(168, 255, 233, 0.541);
+   background-color: rgb(168, 255, 233);
    color: rgb(0, 0, 0);
    transition: all 0.2s linear;
 }
 
+.pagination
+{
+   
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.pagination button
+{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgb(56, 192, 147);;
+    color: white;
+    transition: all 0.3s linear;
+}
+
+.pagination button:hover
+{
+    background-color: rgb(43, 153, 116);;
+    cursor: pointer;
+}
 
 @media (width < 800px)
 {

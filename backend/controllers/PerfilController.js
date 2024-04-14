@@ -1,6 +1,12 @@
 const userSchema = require('../models/UserModel.js');
 const uploadAndGetURL = require('../config/imgbb.js');
 
+
+exports.perfil = (req, res) =>
+{   
+    res.render('perfil', {erro: [], user: req.session.user});
+}
+
 exports.updatePassword = async (req, res) =>
 {
     let user = new userSchema(req.session.user);

@@ -2,6 +2,17 @@ const { products } = require('../db/Schemas.js');
 const Product = require('../models/ProductModel.js')
 
 
+exports.produtos = async (req, res) =>
+{   
+    let menssage = req.session.message;
+    let erro = req.session.erro;
+
+    let products = await Product.listProducts();
+    req.session.message = '';
+    req.session.erro = '';
+    
+    res.render('produtos', {erro: erro, success: menssage, list: products});
+}
 
 exports.createProduct = (req, res) =>
 {
@@ -21,13 +32,15 @@ exports.createProduct = (req, res) =>
                     res.redirect('/home/product');
                 }
                 else
-                {
-                    res.render('produtos', {erro: product.erros})
+                {   
+                    req.session.erro = product.erros;
+                    res.redirect('/home/product');
                 }
             }
             else
-            {
-                res.render('produtos', {erro: 'Todos os campos devem ser preenchidos!'});
+            {   
+                req.session.erro = 'Todos os campos devem ser preenchidos!';
+                res.redirect('/home/product');
             }
            
         }
@@ -39,5 +52,6 @@ exports.createProduct = (req, res) =>
 
 exports.listProducts = async (req, res) =>
 {   
-    res.send(await Product.listProducts());
+    if(req.query.page < 1) req.query.page = 1;    
+    res.send(await Product.listProducts(req.query.page, req.query.limit)); 
 }
