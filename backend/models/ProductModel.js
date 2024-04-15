@@ -72,6 +72,30 @@ class Product
         let response = await categorys.find();
         return response;
     }
+
+    async deleteProduct(id)
+    {
+        try
+        {  
+            let response = await products.deleteOne({_id: id});
+            
+            if(response.deletedCount > 0)
+            {
+                this.sucess.push('Produto apagado com sucesso!');
+                return true;
+            }
+            else
+            {
+                this.erros.push(`Produto não existe!`);
+                return false;
+            }
+        }
+        catch(error)
+        {
+            this.erros.push(`Não foi possivel localizar o produto`);
+            return false;
+        }
+    }
 }
 
 

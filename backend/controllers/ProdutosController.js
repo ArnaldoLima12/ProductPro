@@ -73,6 +73,11 @@ exports.createCategory = (req, res) =>
             res.redirect('/home/product');
         }
     }
+    else
+    {
+        req.session.erro = 'Categoria deve ter um nome';
+        res.redirect('/home/product');
+    }
 }
 
 exports.listProducts = async (req, res) =>
@@ -81,8 +86,24 @@ exports.listProducts = async (req, res) =>
     res.send(await Product.listProducts(req.query.page, req.query.limit)); 
 }
 
-// exports.listCategorys = async (req, res) =>
-// {
+exports.deleteProduct = async (req, res) =>
+{   
+    let product = new Product();
 
-// }
-
+    if(req.params.product)
+    {
+        let deleteProduct = await product.deleteProduct(req.params.product);
+        
+        if(deleteProduct)
+        {
+            req.session.message = product.sucess;
+            res.redirect('/home/product');
+        }
+        else
+        {
+            req.session.erro = product.erros;
+            res.redirect('/home/product');
+        }
+    }
+   
+}

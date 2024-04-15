@@ -26,7 +26,7 @@ const renderContent = (data) => {
                 <td>${element.categoryName}</td>
                 <td class='actions-table'> 
                     <button id='edit'><i class="bi bi-pencil-square"></i></button>
-                    <button id='delete'><i class="bi bi-trash"></i></button>
+                    <button id='delete'><a href='product/delete/${element._id}'><i class="bi bi-trash"></i></a></button>
                 </td>
                 
             </tr>`;

@@ -24,5 +24,5 @@ router.post('/perfil/updatePhoto', auth, upload.single('file'), PerfilController
 router.post('/product/create', auth, ProdutosController.createProduct)
 router.get('/product/list', auth, ProdutosController.listProducts);
 router.post('/product/create-category', auth, ProdutosController.createCategory);
-
+router.get('/product/delete/:product', auth, ProdutosController.deleteProduct);
 module.exports = router;
