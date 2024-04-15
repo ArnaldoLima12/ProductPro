@@ -1,4 +1,4 @@
-const {products} = require('../db/Schemas.js');
+const {products, categorys} = require('../db/Schemas.js');
 
 
 class Product
@@ -11,7 +11,16 @@ class Product
     createProduct(product)
     {  
         try
-        {
+        {   
+            product.date = new Date().toLocaleDateString('en', {
+                day: 'numeric',
+                month: 'numeric',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            });
+
             const productSave = new products(product);
             productSave.save();
 
@@ -25,11 +34,27 @@ class Product
         }
     }
 
+    createCategory(category)
+    {
+        try
+        {   
+            const categorySave = new categorys(category);
+            categorySave.save();
+            this.sucess.push('Categoria criada com sucesso');
+            return true;
+        }
+        catch(erro)
+        {
+            this.erros.push('Não foi possivel criar a categoria');
+            return false;
+        }
+    }
+
     static async listProducts(page = 1, limitItens)
     {   
         let skip = parseInt((page - 1) * limitItens);
 
-        let list =  await products.find().skip(skip).limit(limitItens);
+        let list =  await products.find().skip(skip).limit(limitItens).sort({date: -1});
         let totalItens = await products.countDocuments();
         let totalPages = Math.ceil(totalItens / limitItens);
         
@@ -39,6 +64,12 @@ class Product
             page
         };
 
+        return response;
+    }
+
+    static async listCategorys()
+    {
+        let response = await categorys.find();
         return response;
     }
 }

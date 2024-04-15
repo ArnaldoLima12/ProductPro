@@ -27,10 +27,12 @@ session.initSession(app);
 // Importação das rotas
 const routerLogin = require('./backend/routers/routerLogin.js');
 const routerPanel = require('./backend/routers/routerPanel.js');
+const routerAPI = require('./backend/routers/routerAPI.js');
 
 // Uso das rotas
 app.use('/', routerLogin);
 app.use('/home', routerPanel);
+app.use('/API', routerAPI);
 
 // Rota para página não encontradaa
 app.use((req, res, next) => {

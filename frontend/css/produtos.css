@@ -98,6 +98,28 @@
     cursor: pointer;
 }
 
+
+.actions-table
+{
+   text-align: center;
+}
+
+#edit
+{
+    color: rgb(23, 214, 23);
+    background-color: transparent;
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+#delete
+{
+    color: rgb(192, 23, 23);
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 @media (width < 800px)
 {
     

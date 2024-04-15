@@ -44,6 +44,7 @@
                   <th>Nome</th>
                   <th>Valor</th>
                   <th>Categoria</th>
+                  <th>Ações</th>
                 </tr>
               </thead>
               <tbody class="table-body-content">
@@ -76,7 +77,13 @@
           </div>
           <div class="formGroup">
             <label for="category">Categoria</label>
-            <input type="text" name="category" id="category">
+            <!-- <input type="text" name="category" id="category"> -->
+            <select name="category" id="category">
+              <option selected></option>
+              <%category.forEach(item => {%>
+                <option value="<%=item._id%>/<%=item.name%>"><%=item.name%></option>
+              <%})%>
+            </select>
           </div>
           <div class="formGroup">
             <label for="price">Valor</label>

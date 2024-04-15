@@ -10,19 +10,29 @@ const userSchema = new moongose.Schema({
 });
 
 const productSchema = new moongose.Schema({
-    idProduct: String,
     name: String,
-    category: String,
+    category: 
+    {
+        type: moongose.Schema.Types.ObjectId, 
+        ref: 'categories',
+    },
+    categoryName: String,
     price: Number,
+    date: Date,
     photo: String
-})
+});
 
+const categorySchema = new moongose.Schema({
+    name: String
+});
 
 const users = moongose.model('users', userSchema);
-const products = moongose.model('products', productSchema)
+const products = moongose.model('products', productSchema);
+const categorys = moongose.model('categories', categorySchema);
 
 module.exports = 
 {
     users,
-    products
+    products,
+    categorys
 }
