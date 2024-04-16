@@ -13,7 +13,7 @@ const ProdutosController = require('../controllers/ProdutosController.js');
 router.get('/', auth, PainelController.home);
 router.get('/logout', auth, PainelController.logout);
 router.get('/perfil', auth, PerfilController.perfil);
-router.get('/product', auth, ProdutosController.produtos);
+router.get('/product/:page?', auth, ProdutosController.produtos);
 
 
 //Rotas do painel (perfil)

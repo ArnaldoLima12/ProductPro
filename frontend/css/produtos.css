@@ -83,7 +83,7 @@
     gap: 10px;
 }
 
-.pagination button
+.pagination a
 {
     padding: 5px;
     border-radius: 5px;
@@ -92,7 +92,7 @@
     transition: all 0.3s linear;
 }
 
-.pagination button:hover
+.pagination a:hover
 {
     background-color: rgb(43, 153, 116);;
     cursor: pointer;
@@ -104,19 +104,20 @@
    text-align: center;
 }
 
-#edit
+.edit a
 {
-    color: rgb(23, 214, 23);
+    color: rgb(23, 214, 23);   
+}
+.delete a
+{
+    color: rgb(199, 28, 28);
+}
+
+.actions-table-item
+{
     background-color: transparent;
     font-size: 20px;
     margin-right: 10px;
-    cursor: pointer;
-}
-#delete
-{
-    color: rgb(192, 23, 23);
-    background-color: transparent;
-    font-size: 20px;
     cursor: pointer;
 }
 

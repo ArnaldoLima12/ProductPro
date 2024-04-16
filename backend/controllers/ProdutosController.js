@@ -4,14 +4,18 @@ const Product = require('../models/ProductModel.js')
 
 exports.produtos = async (req, res) =>
 {   
-    let menssage = req.session.message;
+    let success = req.session.message;
     let erro = req.session.erro;
-    let category = await Product.listCategorys();
-    
     req.session.message = '';
     req.session.erro = '';
+
+
+    let category = await Product.listCategorys();
     
-    res.render('produtos', {erro: erro, success: menssage, category});
+    let page = req.params.page || 1;
+    let products = await Product.listProducts(page, 10);
+    
+    res.render('produtos', {erro, success, category, products});
 }
 
 exports.createProduct = (req, res) =>
