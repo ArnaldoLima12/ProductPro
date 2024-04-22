@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('./backend/config/session.js');
+const cors = require('cors');
 const { conection } = require('./backend/db/conectionDB.js');
 const path = require('path');
 
@@ -17,6 +18,13 @@ app.set('views', path.join(__dirname, 'frontend', 'views'));
 
 // Renderizador das views
 app.set('view engine', 'ejs');
+
+//Configuração do cors para acesso de requisições
+const corsOption = {
+origin: 'http://localhost:3000'
+}
+
+app.use(cors(corsOption));
 
 // Faz conexão com o Banco de dados
 conection();

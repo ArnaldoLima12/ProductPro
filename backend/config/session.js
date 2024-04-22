@@ -18,7 +18,7 @@ const initSession = app => {
         resave: true,
         saveUninitialized: false,
         store: MongoStore.create(options), // Passa as opções diretamente
-        cookie: {maxAge: 15 * 60 * 1000, secure: false}
+        cookie: {maxAge: 60 * 60 * 1000, secure: false}
     }));
 };
 
